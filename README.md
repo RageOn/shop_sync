@@ -46,7 +46,7 @@ $ ss download rageon
 Copy a theme from the rageon production store to the staging and development stores
 
 ```
-$ ss copy-theme rageon rageon-staging rageon-development
+$ ss copy rageon rageon-staging rageon-development
 ```
 
 Automatically upload files to the specified store when they are saved
