@@ -32,33 +32,13 @@ After installing, the `ss` command is available:
 
 ```
 $ ss help
-TODO: paste help output here
-```
-
-## Examples
-
-Download a theme to the current directory
-
-```
-$ ss download rageon
-```
-
-Copy a theme from the rageon production store to the staging and development stores
-
-```
-$ ss copy rageon rageon-staging rageon-development
-```
-
-Automatically upload files to the specified store when they are saved
-
-```
-$ ss watch rageon-development
-```
-
-Copy a product collection (including metadata) from one store to one or more stores
-
-```
-$ ss copy-collection 1234 rageon rageon-staging rageon-development
+Commands:
+  ss config STORE                             # Generate a configuration file for the Shopify store named STORE
+  ss copy SOURCE_STORE DESTINATION_STORES...  # Replaces the destination store's themes with the source store's theme
+  ss download STORE                           # Download the theme assets into the current directory for the configured STORE
+  ss help [COMMAND]                           # Describe available commands or one specific command
+  ss replace STORE                            # Replace the theme assets from the current directory to the configured STORE
+  ss watch STORE                              # Automatically upload modified theme assets to the configured STORE
 ```
 
 ## License
