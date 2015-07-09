@@ -18,6 +18,14 @@ Configure the store you would like to work with.
 $ ss config rageon
 ```
 
+This will create a `rageon.env` file in the current directory with the following contents
+
+```
+API_KEY=shopifykey
+API_PASSWORD=shopifypassword
+API_HOST=rageon
+```
+
 ## Usage
 
 After installing, the `ss` command is available:
