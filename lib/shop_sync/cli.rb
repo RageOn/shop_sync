@@ -1,5 +1,6 @@
 require 'thor'
 require 'fileutils'
+require 'shopify_api'
 
 module ShopSync
   class CLI < Thor
@@ -29,7 +30,19 @@ module ShopSync
 
     desc "download STORE", "Download the theme assets into the current directory for the configured STORE"
     def download store
+      unless Authentication.authenticated?(store)
+        puts "Either the store doesn't exist or you haven't authenticated"
+      else
+        auths = Authentication.get(store)
+      end
 
+      shop_url = "https://#{auths[:key]}:#{auths[:password]}@#{auths[:host]}/admin"
+
+      ShopifyAPI::Base.site = shop_url
+      assets = ShopifyAPI::Asset.all
+      assets.each do |asset|
+        puts asset.public_url  
+      end
     end
 
     desc "replace STORE", "Replace the theme assets from the current directory to the configured STORE"
