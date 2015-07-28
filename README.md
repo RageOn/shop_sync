@@ -18,7 +18,7 @@ Configure the store you would like to work with.
 $ shopsync config rageon
 ```
 
-This will create a `rageon.env` file in the current directory with the following contents
+This will create a `rageon.env` file in your home directory with the following contents
 
 ```
 API_KEY=shopifykey
