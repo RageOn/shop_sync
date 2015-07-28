@@ -28,7 +28,7 @@ API_HOST=rageon
 
 ## Usage
 
-After installing, the `ss` command is available:
+After installing, the `shopsync` command is available:
 
 ```
 $ shopsync help
