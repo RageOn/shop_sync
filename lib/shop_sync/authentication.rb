@@ -17,13 +17,13 @@ module ShopSync
       end
 
       def get(store)
+        auth = {}
         File.open(get_store_env_path(store), "r") do |f|
-          key = f.gets.split('=')[1]
-          password = f.gets.split('=')[1]
-          host = f.gets.split('=')[1]
+          auth[:key]      = f.gets.split('=')[1].strip!
+          auth[:password] = f.gets.split('=')[1].strip!
+          auth[:host]     = f.gets.split('=')[1].strip!
         end
-
-        [key, password, host]
+        auth
       end
 
       def clear(store)
